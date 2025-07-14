@@ -2,9 +2,9 @@
 
 ##  Project Overview
 
-**AskDB** is a Gen-AI-powered solution that allows business users and decision-makers to query **MySQL databases using natural language**, removing the need for SQL expertise. In many production environments, key decisions rely on outdated reports or manual queries—AskDB eliminates this bottleneck by enabling real-time insights through a conversational interface.
+**AskDB** is a Gen-AI-powered solution that allows business users and decision-makers to query **MySQL databases using natural language**, removing the need for SQL expertise. In many production environments, key decisions rely on outdated reports or manual queries AskDB eliminates this bottleneck by enabling real-time insights through a conversational interface.
 
-The system converts user questions into SQL, executes them on a live MySQL database, and returns the results in a clear, readable tabular format. It is built using Streamlit and LangChain, and powered by Groq's ultra-fast inference of LLaMA 3.
+The system converts user questions into SQL, executes them on a live MySQL database, and returns the results in a clear format. It is built using Streamlit and LangChain, and powered by Groq's ultra-fast inference of LLaMA 3.
 
 ---
 
@@ -38,8 +38,6 @@ The system converts user questions into SQL, executes them on a live MySQL datab
 - **Groq** – For ultra-fast LLaMA 3 inference
 - **SQLAlchemy** – ORM and SQL abstraction
 - **mysql-connector-python** – MySQL DB connectivity
-- **Pandas** – Tabular output display
-
 
 
 ---
@@ -50,4 +48,62 @@ The system converts user questions into SQL, executes them on a live MySQL datab
 ```bash
 git clone https://github.com/MADHAVAN200/AskDB.git
 cd AskDB
+```
+
+### 2. Create a Virtual Environment (Optional but Recommended)
+
+```bash
+python -m venv venv
+# Windows
+.\venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+```
+
+### 3. Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set Up .env
+#Create a .env file in the root directory
+
+```bash
+GROQ_API_KEY="your_groq_api_key_here"
+```
+
+### 5. Run the App
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## How to Use
+
+1. **Launch the app** using the following command:
+
+   ```bash
+   streamlit run app.py
+  
+2. **In the sidebar, enter the following MySQL credentials:**
+  - **MySQL Host** (e.g., `localhost`)
+  - **MySQL User**
+  - **MySQL Password**
+  - **MySQL Database Name**
+
+3. Click **Connect** to establish a database connection.
+
+4. **Once connected**, use the chat input at the bottom to ask questions in plain English, such as:
+  - **"List all customers from Delhi"**
+  - **"Show total sales by category"**
+  - **"Get all orders placed in March 2024"**
+
+5. **The AI will:**
+  - **Interpret your query**
+  - **Convert it into a valid SQL command**
+  - **Execute the query on your MySQL database**
+  - **Produces Results**
 
